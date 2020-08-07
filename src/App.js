@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Switch,Route,Redirect} from 'react-router-dom'
+import asyncComponent from './util/asyncComponent'
+import MyRoute from './components/MyRote/MyRoute'
 
+const Login = asyncComponent(()=>import('./pages/Login/Login'))
+const Reg = asyncComponent(()=>import('./pages/Reg/Reg'))
+const Index = asyncComponent(()=>import('./pages/Index/Index'))
+const Goods = asyncComponent(()=>import('./pages/Goods/Goods'))
+const GoodsDetail = asyncComponent(()=>import('./pages/GoodsDetail/GoodsDetail'))
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/reg" component={Reg}></Route>
+          <MyRoute path='/index' component={Index}></MyRoute>
+          <MyRoute path='/goods' component={Goods}></MyRoute>
+          <MyRoute path='/goodsDetail' component={GoodsDetail}></MyRoute>
+          <Redirect to='/login'></Redirect>
+      </Switch>
     </div>
   );
 }

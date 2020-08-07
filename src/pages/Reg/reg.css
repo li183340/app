@@ -1,0 +1,30 @@
+
+.reg .form{
+    padding: 10%;
+    padding-top: 40%;
+}
+.reg .form>.int{
+    margin-top: 0.2rem;
+}
+.reg .form .int>input{
+    border: none;
+    border-bottom: 1px solid #a3a3a3;
+    background: transparent;
+    width: 100%;
+    margin-top: 0.1rem;
+}
+
+.reg .form .int>.foget{
+    float: right;
+    color: #000;
+    
+}
+.reg .form .int>button{
+    width: 100%;
+    margin-top: 0.2rem;
+    padding: 0.2rem 0 ;
+    border: none;
+    border-radius: 0.1rem;
+    background: #ff9900;
+    color: #fff;
+}

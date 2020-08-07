@@ -1,0 +1,11 @@
+.home>.adv{
+    display: flex;
+    width: 100%;
+}
+.home>.adv>div{
+    flex: 1;
+    text-align: center;
+}
+.home>.adv>div>img{
+    width:1rem ;
+}
