@@ -8,6 +8,7 @@ const Reg = asyncComponent(()=>import('./pages/Reg/Reg'))
 const Index = asyncComponent(()=>import('./pages/Index/Index'))
 const Goods = asyncComponent(()=>import('./pages/Goods/Goods'))
 const GoodsDetail = asyncComponent(()=>import('./pages/GoodsDetail/GoodsDetail'))
+const CateDetail = asyncComponent(()=>import('./pages/CateDetail/CateDetail'))
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
           <MyRoute path='/index' component={Index}></MyRoute>
           <MyRoute path='/goods' component={Goods}></MyRoute>
           <MyRoute path='/goodsDetail' component={GoodsDetail}></MyRoute>
+          <MyRoute path='/cateDetail' component={CateDetail}></MyRoute>
           <Redirect to='/login'></Redirect>
       </Switch>
     </div>

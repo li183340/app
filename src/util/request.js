@@ -6,6 +6,8 @@ axios.interceptors.response.use(res=>{
     return res
 })
 
+
+
 //=================会员登录==================
 export const httplogin = (params)=>{
     return axios({
@@ -49,5 +51,64 @@ export const httpgetgoodsinfo=(id)=>{
         params:{
             id:id
         }
+    })
+}
+
+//===========================获取分类树形结构======================
+export const httpgetcatetree = ()=>{
+    return axios({
+        url:"/api/getcatetree",
+        method:"get"
+    })
+}
+
+//====================获取分类商品=================
+export const httpgetgoods=(fid)=>{
+    return axios({
+        url:'/api/getgoods',
+        method:'get',
+        params:{
+            fid:fid
+        }
+    })
+}
+
+//==================购物车列表=====================
+export const httpcartlist = (uid)=>{
+    return axios({
+        url:'/api/cartlist',
+        method:'get',
+        params:{
+            uid:uid
+        }
+    })
+}
+
+//=================购物车添加=====================
+export const httpcartadd = (params)=>{
+    return axios({
+        url:'/api/cartadd',
+        method:"post",
+        data:params
+    })
+}
+
+//================购物车删除===================
+export const httpcartdelete=(id)=>{
+    return axios({
+        url:'/api/cartdelete',
+        method:"post",
+        data:{
+            id:id
+        }
+    })
+}
+
+//================购物车修改=====================
+export const httpcartedit = (params)=>{
+    return axios({
+        url:'/api/cartedit',
+        method:'post',
+        data:params
     })
 }

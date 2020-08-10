@@ -6,7 +6,7 @@ export default class MyRoute extends Component {
         return (
             <div>
                 {
-                    <Route {...this.props}></Route>
+                 isLogin?<Route {...this.props}></Route>:<Redirect to="/login"></Redirect>
                 }
             </div>
         )

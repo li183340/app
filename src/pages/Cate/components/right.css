@@ -1,0 +1,27 @@
+.right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+}
+.rightdetail{
+    position: relative;
+    border: 0.01rem solid blue;
+    border-radius: 0.1rem;
+    width: 40%;
+    overflow: hidden;
+    margin: 0.2rem;
+}
+.rightdetail>img{
+    width: 100%;
+    height: 100%;
+   
+}
+.rightdetail>p{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: blue;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+.cate{
+    overflow: hidden;
+}
+.cateleft{
+    width: 30%;
+    float: left;
+}
+.cateleft ul li{
+    padding: 0.2rem 0.4rem;
+    border-left: 0.07rem solid transparent;
+}
+.cateleft .liborder{
+    border-left: 0.07rem solid blue;
+    background: #fff;
+}

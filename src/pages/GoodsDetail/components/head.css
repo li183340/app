@@ -1,0 +1,17 @@
+.head{
+    width: 100vw;
+    height: 0.80rem;
+    background:#ff9900;
+    color:#fff;
+    line-height: 0.80rem;
+    text-align: center;
+}
+.head>a{
+    float: right;
+    padding-right: 0.2rem;
+    color: #fff;
+}
+.head>.goback{
+    float: left;
+    margin-left: 0.2rem;
+}

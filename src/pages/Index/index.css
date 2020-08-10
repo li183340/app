@@ -6,6 +6,7 @@
     left: 0;
     display: flex;
     background: #fff;
+    padding-top: 0.2rem;
 }
 .index>footer a{
     flex: 1;
@@ -16,64 +17,6 @@
 .index>footer a>p{
     color: #333;
 }
-.index>footer a>.img1{
-    width:0.43rem ;
-    height: 0.38rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_home_nor.png) no-repeat ;
-    background-size: 100%;
-}
-.index>footer a>.img2{
-    width:0.34rem ;
-    height: 0.34rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_menu_nor.png) no-repeat;
-    background-size: 100%;
-}
-.index>footer a>.img3{
-    width:0.38rem ;
-    height: 0.41rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_shopping_nor.png) no-repeat;
-    background-size: 100%;
-    
-}
-.index>footer a>.img4{
-    width:0.38rem ;
-    height: 0.44rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_me_nor.png) no-repeat;
-    background-size: 100%;
-}
-.index>footer a>.imgs1{
-    width:0.43rem ;
-    height: 0.38rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_home_hig.png) no-repeat ;
-    background-size: 100%;
-}
-.index>footer a>.imgs2{
-    width:0.34rem ;
-    height: 0.34rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_menu_hig.png) no-repeat;
-    background-size: 100%;
-}
-.index>footer a>.imgs3{
-    width:0.38rem ;
-    height: 0.41rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_shopping_hig.png) no-repeat;
-    background-size: 100%;
-    
-}
-.index>footer a>.imgs4{
-    width:0.38rem ;
-    height: 0.44rem;
-    display: inline-block;
-    background: url(../../assets/img/tab_me_hig.png) no-repeat;
-    background-size: 100%;
-}
-.index>footer a>.txtcolor{
-    color:#ff9900
+.index>footer a>img{
+    width: 0.4rem;
 }

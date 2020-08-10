@@ -29,13 +29,13 @@ export default class Login extends Component {
                 [key]:e.target.value
             }
         })
-        console.log(this.state.user)
     }
 
     login(){
         
         httplogin(this.state.user).then(res=>{
             if(res.data.code===200){
+                sessionStorage.setItem('user',JSON.stringify(res.data.list))
                 this.props.history.push('/index')
             }else{
                 this.showToast(res.data.msg)
@@ -49,7 +49,6 @@ export default class Login extends Component {
         return (
             <div className='login'>
                 <Head title={this.state.title}></Head>
-                
                 <div className='form'>
                     <div className='int'>
                         <p>账号：</p>
