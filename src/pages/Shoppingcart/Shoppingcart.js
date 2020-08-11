@@ -21,7 +21,6 @@ export default class Shoppingcart extends Component {
     }
     componentDidMount() {
         let uid =JSON.parse(sessionStorage.getItem('user')).uid
-        console.log(uid)
         httpcartlist(uid).then(res => {
             if(res.data.list){
                 this.setState({
@@ -59,11 +58,9 @@ export default class Shoppingcart extends Component {
     zongjia(index) {
         
         let a = this.state.list[index].price * this.state.list[index].num
-        console.log('aaaaaaa'+a)
         this.setState({
             all:this.state.all+a
         },()=>{
-            console.log(this.state.all)
         })
     }
     //总价减
@@ -88,7 +85,6 @@ export default class Shoppingcart extends Component {
                 if (this.state.n === checkboximg.length) {
                     allcheckbox.src = radio_hig
                 }
-                console.log(this.state.all,index)
             })
         } else {
             checkboximg[index].src = radio_nor
@@ -142,12 +138,11 @@ export default class Shoppingcart extends Component {
     addnum(id, index) {
         let checkboximgone = document.querySelectorAll('.checkboximg')[index]
         httpcartedit({ id: id, type: 2 }).then(res => { })
-        httpcartlist(sessionStorage.getItem('user')).then(res => {
+        httpcartlist(JSON.parse(sessionStorage.getItem('user')).uid).then(res => {
             this.setState({
                 list: res.data.list
             }, () => {
                 if (checkboximgone.src === radio_hig) {
-                    console.log((this.state.list[index].price * this.state.list[index].num))
                     this.setState({
                         all: this.state.all + this.state.list[index].price
                     })
@@ -159,17 +154,15 @@ export default class Shoppingcart extends Component {
     jiannum(id, index) {
         let checkboximgone = document.querySelectorAll('.checkboximg')[index]
         let jian = document.querySelector('.jian')
-        console.log(this.state.list[index].num);
         if (this.state.list[index].num <= 1) {
             this.showToast('不能再少了')
         } else {
             httpcartedit({ id: id, type: 1 }).then(res => { })
-            httpcartlist(sessionStorage.getItem('user')).then(res => {
+            httpcartlist(JSON.parse(sessionStorage.getItem('user')).uid).then(res => {
                 this.setState({
                     list: res.data.list
                 }, () => {
                     if (checkboximgone.src === radio_hig) {
-                        console.log((this.state.list[index].price * this.state.list[index].num))
                         this.setState({
                             all: this.state.all - this.state.list[index].price
                         })
@@ -261,7 +254,7 @@ export default class Shoppingcart extends Component {
                     </div>
                     <div>
                         <p>合计：{filterprice(this.state.all)}</p>
-            <span>（不含运费）{this.state.n}</span>
+            <span>（不含运费）</span>
                     </div>
                     <button className='btn'>去结算</button>
                 </div>

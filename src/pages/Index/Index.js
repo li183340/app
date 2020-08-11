@@ -19,23 +19,25 @@ export default class Index extends Component {
     change(index){
         let footerimg = document.querySelectorAll('.footerimg')
         let footerimg2 = document.querySelectorAll('.footerimg2')
-        let p = document.querySelectorAll('.txt')
+        let p = document.querySelectorAll('.text')
         for(let i=0;i<footerimg.length;i++){
             footerimg2[i].style.display='none'
             footerimg[i].style.display='inline-block'
             p[i].style.color = '#333'
-            footerimg2[index].style.display='inline-block'
-            footerimg[index].style.display='none'
-            p[index].style.color='#ff9900'
-
         }
+        footerimg2[index].style.display='inline-block'
+        footerimg[index].style.display='none'
+        p[index].style.color='#ff9900'
+        console.log(index)
     }
 
     componentDidMount(){
         let footerimg2 = document.querySelectorAll('.footerimg2')
         for(let i=0;i<footerimg2.length;i++){
             footerimg2[i].style.display='none'
+           
         }
+        this.change(0)
     }
 
     render() {
@@ -53,22 +55,22 @@ export default class Index extends Component {
                     <NavLink to='/index/home' onClick={()=>this.change(0)}>
                         <img src={home_nor} alt="" className='footerimg'/>
                         <img src={home_hig} alt="" className='footerimg2'/>
-                        <p className='txt'>首页</p>
+                        <p className='text'>首页</p>
                     </NavLink>
                     <NavLink to='/index/cate' onClick={()=>this.change(1)}>
                     <img src={menu_nor} alt="" className='footerimg'/>
                     <img src={menu_hig} alt="" className='footerimg2'/>
-                        <p className='txt'>分类</p>
+                        <p className='text'>分类</p>
                     </NavLink>
                     <NavLink to='/index/shoppingcart' onClick={()=>this.change(2)}>
                     <img src={shopping_nor} alt="" className='footerimg'/>
                     <img src={shopping_hig} alt="" className='footerimg2'/>
-                        <p className='txt'>购物车</p>
+                        <p className='text'>购物车</p>
                     </NavLink>
                     <NavLink to='/index/mine' onClick={()=>this.change(3)}>
                     <img src={me_nor} alt="" className='footerimg'/>
                     <img src={me_hig} alt="" className='footerimg2'/>
-                        <p className='txt'>我的</p>
+                        <p className='text'>我的</p>
                     </NavLink>
                 </footer>
             </div>

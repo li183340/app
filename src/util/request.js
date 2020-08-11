@@ -6,6 +6,13 @@ axios.interceptors.response.use(res=>{
     return res
 })
 
+axios.interceptors.request.use(req=>{
+    console.log(req)
+    if(req.url!=='/api/login'){
+        req.headers.authorization = JSON.parse(sessionStorage.getItem('user')).token
+    }
+    return req
+})
 
 
 //=================会员登录==================
